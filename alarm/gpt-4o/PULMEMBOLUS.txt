@@ -1,9 +1,0 @@
-before:
-after:
-SAO2
-SHUNT
-PAP
-not confirm:
-EXPCO2
-MINVOL
-FIO2

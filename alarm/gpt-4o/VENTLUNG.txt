@@ -1,9 +1,0 @@
-before:
-VENTTUBE
-after:
-VENTALV
-not confirm:
-MINVOL
-EXPCO2
-MINVOLSET
-VENTMACH

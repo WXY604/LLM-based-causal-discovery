@@ -1,8 +1,0 @@
-before:
-PULMEMBOLUS
-SHUNT
-after:
-PAP
-not confirm:
-CVP
-PCWP
