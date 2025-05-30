@@ -1,6 +1,6 @@
-# Dataset Part
+### Dataset Part
 
--   `data_structure`
+-  `data_structure`
     -   `{Dataset_name}`
         -   `{Dataset_name}_graph.txt`：数据集变量的真实因果图
         -   `{Dataset_name}.mapping`：数据集变量名对照
@@ -9,8 +9,7 @@
         -   `{Dataset_name}`
             -   `{Dataset_name}_continues_{n}dsize_random{r}`：合成数据集，n表示数据集规模与变量数目的比值，r表示随机生成参数
 
----
-# LLM Part
+### LLM Part
 
 -   `prompt_design`
     -   `description`
@@ -26,8 +25,7 @@
             -   `{LLM_name}`
                 -   `{Variable_name}.txt`：数据集中某个特定变量的前后因果关系
 
----
-# Casual Discovery Part
+### Casual Discovery Part
 
 -   `prior_knowledge`
     -   `knowledge_matrix_convert.py`：将大模型提供的知识清洗并转化为矩阵形式
