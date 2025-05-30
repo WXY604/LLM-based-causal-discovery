@@ -1,0 +1,10 @@
+before:
+after:
+MINVOL
+VENTMACH
+VENTTUBE
+VENTLUNG
+VENTALV
+EXPCO2
+ARTCO2
+not confirm:

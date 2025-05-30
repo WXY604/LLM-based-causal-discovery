@@ -1,0 +1,12 @@
+before:
+PAP
+after:
+HR
+CO
+BP
+CVP
+LVEDVOLUME
+not confirm:
+PCWP
+STROKEVOLUME
+ERRLOWOUTPUT
