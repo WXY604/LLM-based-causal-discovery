@@ -1,0 +1,11 @@
+python==3.10.13
+numpy==1.26.1
+igraph==0.11.3
+requests==2.28.1
+rich==13.7.0
+gcastle==1.0.4rc1
+dagma==1.1.1
+typing-extensions==4.12.2
+tqdm==4.66.1
+torch==2.0.1+cu118
+causaldisco==0.2.0
