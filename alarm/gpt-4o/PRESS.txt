@@ -1,0 +1,13 @@
+before:
+MINVOLSET
+VENTMACH
+VENTTUBE
+
+after:
+
+not confirm:
+MINVOL
+CATECHOL
+FIO2
+PVSAT
+SAO2
