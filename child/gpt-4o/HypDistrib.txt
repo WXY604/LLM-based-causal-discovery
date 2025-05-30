@@ -1,0 +1,17 @@
+before:
+BirthAsphyxia
+CardiacMixing
+Disease
+after:
+LowerBodyO2
+RUQO2
+Sick
+not confirm:
+Age
+CO2
+ChestXray
+Grunting
+LVH
+DuctFlow
+LungParench
+LungFlow

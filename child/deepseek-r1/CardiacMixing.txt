@@ -1,0 +1,24 @@
+
+
+before:
+Disease
+LungFlow
+DuctFlow
+LVH
+after:
+HypDistrib
+HypoxiaInO2
+CO2
+LowerBodyO2
+RUQO2
+Grunting
+not confirm:
+BirthAsphyxia
+ChestXray
+LVHreport
+CO2Report
+XrayReport
+GruntingReport
+Age
+LungParench
+Sick
