@@ -1,0 +1,54 @@
+You are an expert on diagnostic application, which is used in alarm messaging systems for patient monitoring.. You are investigating the cause-and-effect relationships between the following variables in your field. Variables and their meanings are presented as follows. 
+
+HISTORY: Patient's medical history
+CVP: Measurement variable. (Central Venous Pressure): This variable represents the pressure within the thoracic vena cava, near the patient's heart.
+PCWP: Measurement variable. (Pulmonary Capillary Wedge Pressure): This variable represents the pressure in the pulmonary capillaries, reflecting the pressure in the left atrium.
+HYPOVOLEMIA: Diagnostic variable. This variable indicates whether the patient is experiencing low blood volume.
+LVEDVOLUME: Intermediate variable. (Left Ventricular End-Diastolic Volume), This variable represents the volume of blood in the left ventricle at the end of diastole, before the ventricle contracts, indicated by test results.
+LVFAILURE: Diagnostic variable. This variable indicates whether the patient is experiencing left ventricular failure.
+STROKEVOLUME: Intermediate variable. This variable represents the volume of blood pumped out of the heart with each beat.
+ERRLOWOUTPUT: Intermediate variable and top level. (Error Low Output): Whether the output of Heart Rate Blood Pressure goes wrong.
+HRBP: Measurement variable. (Heart Rate Blood Pressure): This variable represents the Heart Rate Blood Pressure indicated by test results.
+HREKG: Measurement variable. (Heart Rate Electrocardiogram): This variable represents the heart rate as measured by an electrocardiogram.
+ERRCAUTER: Intermediate variable and top level. (Error Cauterization): This variable indicates whether or not an electrocauter is in use, which will affect heart rate.
+HRSAT: Measurement variable. (Heart Rate Saturation): This variable represents the patient's oxygen saturation in relation to their heart rate.
+INSUFFANESTH: Diagnostic variable. (Insufficient Anesthesia): This variable indicates whether the patient is experiencing insufficient anesthesia during a procedure.
+ANAPHYLAXIS: Diagnostic variable. This variable indicates whether the patient is experiencing an anaphylactic reaction.
+TPR: Measurement variable. (Total Peripheral Resistance): This variable represents the resistance to blood flow within the circulatory system.
+EXPCO2: Measurement variable. (Exhaled Carbon Dioxide): This variable represents the amount of carbon dioxide exhaled by the patient.
+KINKEDTUBE: Diagnostic variable. This variable indicates whether there is a kink in a tube, such as an endotracheal or ventilator tube, which may impede airflow.
+MINVOL: Measurement variable. (Minute Volume): This variable represents the minute volume.
+FIO2: Measurement variable. (Fraction of Inspired Oxygen): This variable represents the concentration of oxygen in the inspired air, preset with fixed value.
+PVSAT: Intermediate variable. Pulmonary artery oxygen saturation
+SAO2: Measurement variable. (Arterial Oxygen Saturation): This variable represents the percentage of hemoglobin in the arterial blood that is saturated with oxygen.
+PAP: Measurement variable. (Pulmonary Artery Pressure): This variable represents the pressure in the pulmonary artery.
+PULMEMBOLUS: Diagnostic variable. (Pulmonary Embolism): This variable indicates whether the patient is experiencing a pulmonary embolism.
+SHUNT: Intermediate variable. This variable represents the presence and degree of a shunt, which is an abnormal connection between blood vessels or heart chambers, allowing blood to bypass the normal circulatory pathway.
+INTUBATION: Diagnostic variable. This variable represents the placement of an endotracheal tube, with NORMAL indicating proper placement in the trachea, ESOPHAGEAL indicating accidental placement in the esophagus, and ONESIDED indicating that the tube is only in one lung.
+PRESS: Measurement variable. (Pressure): This variable represents the pressure in various parts of the respiratory system or related equipment.
+DISCONNECT: Diagnostic variable. This variable indicates whether there is a disconnection in the patient's ventilator circuit, potentially causing ventilation issues.
+MINVOLSET: Measurement variable and top level. Minute ventilation
+VENTMACH: Intermediate variable. (Ventilator Machine): This variable represents the operational setting of the ventilator machine, off, low or high.
+VENTTUBE: Intermediate variable. (Ventilator Tube): This variable represents the airflow through the ventilator tube.
+VENTLUNG: Intermediate variable. (Ventilator Lung): This variable indicates the state or capacity of the lungs to receive and process the air supplied by the ventilation machine.
+VENTALV: Intermediate variable. (Ventilator Alveoli): Indicates the state or capacity of the alveoli (tiny air sacs in the lungs where oxygen and carbon dioxide exchange takes place).
+ARTCO2: Intermediate variable. (Arterial Carbon Dioxide): This variable represents the partial pressure of carbon dioxide in the arterial blood.
+CATECHOL: Intermediate variable. (Catecholamines): This variable represents the levels of catecholamines, which are hormones released in response to stress, such as adrenaline and noradrenaline.
+HR: Intermediate variable. (Heart Rate): This variable represents the patient's heart rate.
+CO: Measurement variable. (Cardiac Output): This variable represents the amount of blood the heart pumps per minute.
+BP: Measurement variable. (Blood Pressure): This variable represents the patient's blood pressure, which is the force exerted by the blood against the walls of the blood vessels.
+
+Which indicators !undoubtedly! lead the EXPCO2 changes? Which indicators !undoubtedly! change after the EXPCO2 changes? Which indicators cannot determine the order of change with the EXPCO2? Please answer strictly in the following format. No explanation is required and no other content should be entered. 
+
+before:
+A
+B
+...
+after:
+A
+B
+...
+not confirm:
+A
+B
+...

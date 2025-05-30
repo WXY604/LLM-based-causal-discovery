@@ -1,0 +1,25 @@
+{
+    "variable_definitions": {
+      "BirthAsphyxia": "This variable indicates whether the newborn experienced birth asphyxia or not, which is already known.",
+      "HypDistrib": "This variable represents the distribution of blood flow in the body.",
+      "HypoxiaInO2": "This variable indicates the severity of hypoxia (low oxygen levels) in the body.",
+      "CO2": "This variable represents the carbon dioxide levels in the body.",
+      "ChestXray": "This variable describes if the baby needs a chest X-ray.",
+      "Grunting": "This variable indicates the presence of grunting in the newborn.",
+      "LVHreport": "This variable represents the report of left ventricular hypertrophy (LVH), only directly dependent on the LVH variable. It's a final result.",
+      "LowerBodyO2": "This variable indicates the oxygen saturation levels in the lower body.",
+      "RUQO2": "This variable indicates the oxygen saturation levels in the right upper quadrant of the body.",
+      "CO2Report": "This variable represents the report of CO2 levels, only directly dependent on the CO2 variable. It's a final result.",
+      "XrayReport": "This variable describes the appearance of the chest X-ray findings in the medical report. It's a final result.",
+      "Disease": "This variable indicates whether the baby has a underlying disease, which is a reason to other symptoms.",
+      "GruntingReport": "This variable indicates the report of presence of grunting, only directly dependent on the Grunting variable. It's a final result.",
+      "Age": "This variable represents the age of the newborn to be inferred from diagnose.",
+      "LVH": "This variable indicates the presence of left ventricular hypertrophy (LVH) in the newborn.",
+      "DuctFlow": "This variable represents the direction of blood flow in the ductus arteriosus.",
+      "CardiacMixing": "This variable describes the degree of mixing between oxygenated and deoxygenated blood in the heart.",
+      "LungParench": "This variable represents the appearance of the lung parenchyma.",
+      "LungFlow": "This variable indicates the blood flow in the lungs.",
+      "Sick": "This variable indicates whether the newborn is sick or not."
+    },
+    "query_template": "You are an expert on newborn diseases. You are investigating the cause-and-effect relationships between the following variables in your field. Variables and their meanings are presented as follows. \n\n{{variable_definitions}}\n\nWhich indicators !undoubtedly! lead the {{current_variable}} changes? Which indicators !undoubtedly! change after the {{current_variable}} changes? Which indicators cannot determine the order of change with the {{current_variable}}? Please answer strictly in the following format. No explanation is required and no other content should be entered. \n\nbefore:\nA\nB\n...\nafter:\nA\nB\n...\nnot confirm:\nA\nB\n..."
+  }
