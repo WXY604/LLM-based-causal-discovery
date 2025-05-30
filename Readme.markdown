@@ -47,7 +47,7 @@
 -   `evalution.py`：训练过程中所使用的计算函数
 -   `preparation.py`：参数设置等前置准备
 -   `main.py`：主程序
--   `out`
+####   `out`
     -   `output.csv`：模型训练结果的各项参数与指标展示
  
 
