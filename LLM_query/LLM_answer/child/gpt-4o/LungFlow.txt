@@ -1,0 +1,14 @@
+before:
+BirthAsphyxia
+Disease
+after:
+not confirm:
+HypoxiaInO2
+CO2
+ChestXray
+Grunting
+RUQO2
+Sick
+
+LVH
+Age

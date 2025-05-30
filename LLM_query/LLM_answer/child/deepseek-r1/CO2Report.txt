@@ -1,0 +1,18 @@
+
+
+before:
+BirthAsphyxia
+HypoxiaInO2
+Grunting
+LungParench
+LungFlow
+Sick
+after:
+not confirm:
+CardiacMixing
+DuctFlow
+HypDistrib
+Age
+LowerBodyO2
+RUQO2
+ChestXray

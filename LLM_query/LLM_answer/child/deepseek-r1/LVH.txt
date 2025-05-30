@@ -1,0 +1,22 @@
+
+
+before:
+Disease
+CardiacMixing
+DuctFlow
+
+after:
+LVHreport
+HypDistrib
+LowerBodyO2
+RUQO2
+
+not confirm:
+HypoxiaInO2
+CO2
+ChestXray
+Grunting
+LungParench
+LungFlow
+Sick
+Age
