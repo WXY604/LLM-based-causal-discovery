@@ -50,4 +50,5 @@
 ####   `out`
 -   `output.csv`：模型训练结果的各项参数与指标展示
  
-
+# Run
+        -`python causal_discovery/main.py`
