@@ -48,6 +48,6 @@
 -   `preparation.py`：参数设置等前置准备
 -   `main.py`：主程序
 ####   `out`
-    -   `output.csv`：模型训练结果的各项参数与指标展示
+-   `output.csv`：模型训练结果的各项参数与指标展示
  
 
