@@ -7,15 +7,15 @@ Inferring causal relationships from observational data is a core challenge in da
 
 ## **Opportunities and Challenges of Large Language Models**
 
-The emergence of Large Language Models (LLMs) has provided new possibilities for acquiring prior knowledge. By querying LLMs about the relationships between variables, researchers can obtain judgments that approach the level of an expert. The advantage of this approach lies in significantly reducing the cost of knowledge acquisition. [cite\_start]Furthermore, in some scenarios, the knowledge provided by LLMs can be more objective than the judgments of non-professionals[cite: 17].
+The emergence of Large Language Models (LLMs) has provided new possibilities for acquiring prior knowledge. By querying LLMs about the relationships between variables, researchers can obtain judgments that approach the level of an expert. The advantage of this approach lies in significantly reducing the cost of knowledge acquisition. Furthermore, in some scenarios, the knowledge provided by LLMs can be more objective than the judgments of non-professionals.
 
-However, this new paradigm is also accompanied by challenges. [cite\_start]LLMs have inherent instability; queries on the same topic may return inconsistent or even self-contradictory results[cite: 20, 74]. [cite\_start]Using this inaccurate or internally contradictory information directly as priors can not only fail to improve model performance but may also negatively impact the accuracy of the final analysis[cite: 22].
+However, this new paradigm is also accompanied by challenges. LLMs have inherent instability; queries on the same topic may return inconsistent or even self-contradictory results. Using this inaccurate or internally contradictory information directly as priors can not only fail to improve model performance but may also negatively impact the accuracy of the final analysis.
 
 ## **Our Approach and the Toolkit's Core Functionality**
 
 To address this challenge, we have developed this toolkit. It aims to fully leverage the powerful knowledge base of LLMs while systematically mitigating the risks associated with their instability.
 
-[cite\_start]Our core approach is inspired by the latest research findings: guiding an LLM to determine the concrete temporal order of events yields more reliable and stable outputs compared to directly asking it to judge abstract causal relationships[cite: 25].
+Our core approach is inspired by the latest research findings: guiding an LLM to determine the concrete temporal order of events yields more reliable and stable outputs compared to directly asking it to judge abstract causal relationships.
 
 Based on this, the core functionalities of this toolkit include:
 
@@ -33,20 +33,20 @@ The entire process can be summarized into several high-level stages:
 
   * **Stage 1: Initial Knowledge Generation (Partial Order Generation)**
 
-      * [cite\_start]In this stage, we initiate structured queries to the LLM through scenario simulation and metadata input[cite: 42].
-      * [cite\_start]The objective is to obtain the model's preliminary, discrete judgments about the temporal sequence of variables[cite: 91].
+      * In this stage, we initiate structured queries to the LLM through scenario simulation and metadata input.
+      * The objective is to obtain the model's preliminary, discrete judgments about the temporal sequence of variables.
 
   * **Stage 2: Knowledge Integration and Refinement (Conflicting Decomposition & Optimal Total Order Discovery)**
 
       * This is a critical step in the process. The toolkit systematically analyzes all preliminary judgments obtained from the LLM.
-      * [cite\_start]It integrates these scattered and potentially inconsistent local pieces of information with the aim of refining a more globally consistent and reliable variable ordering[cite: 92, 112].
+      * It integrates these scattered and potentially inconsistent local pieces of information with the aim of refining a more globally consistent and reliable variable ordering.
 
   * **Stage 3: Guiding Downstream Analysis (Order-based Causality)**
 
       * Finally, this refined global ordering serves as a high-quality prior knowledge.
-      * [cite\_start]It can be input into any standard causal discovery algorithm chosen by the user, acting as a strong external guide to help the algorithm converge more accurately on the real data to infer the final causal graph[cite: 93].
+      * It can be input into any standard causal discovery algorithm chosen by the user, acting as a strong external guide to help the algorithm converge more accurately on the real data to infer the final causal graph.
 
-[cite\_start]In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning[cite: 133, 210].
+In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning.
 
 ![figure.](images/framework.PNG)
 
