@@ -1,6 +1,6 @@
 # Dictionary
 ## Introduction
-![figure.](./images/framwork.pdf)
+![figure.](LLM-based-causal-discovery/images/framwork.pdf)
 
 
 
