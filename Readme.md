@@ -1,18 +1,17 @@
-# Dictionary
 
-## LLM-Augmented Causal Discovery Toolkit: A Technical Introduction
+# LLM-Augmented Causal Discovery Toolkit: A Technical Introduction
 
-#### **Background and Challenges**
+## **Background and Challenges**
 
 Inferring causal relationships from observational data is a core challenge in data science and related research fields. Traditional causal discovery methods rely heavily on prior knowledge from domain experts for guidance. However, acquiring such knowledge often involves significant costs in terms of both time and money, which largely limits the application scope of advanced causal discovery techniques.
 
-#### **Opportunities and Challenges of Large Language Models**
+## **Opportunities and Challenges of Large Language Models**
 
 The emergence of Large Language Models (LLMs) has provided new possibilities for acquiring prior knowledge. By querying LLMs about the relationships between variables, researchers can obtain judgments that approach the level of an expert. The advantage of this approach lies in significantly reducing the cost of knowledge acquisition. [cite\_start]Furthermore, in some scenarios, the knowledge provided by LLMs can be more objective than the judgments of non-professionals[cite: 17].
 
 However, this new paradigm is also accompanied by challenges. [cite\_start]LLMs have inherent instability; queries on the same topic may return inconsistent or even self-contradictory results[cite: 20, 74]. [cite\_start]Using this inaccurate or internally contradictory information directly as priors can not only fail to improve model performance but may also negatively impact the accuracy of the final analysis[cite: 22].
 
-#### **Our Approach and the Toolkit's Core Functionality**
+## **Our Approach and the Toolkit's Core Functionality**
 
 To address this challenge, we have developed this toolkit. It aims to fully leverage the powerful knowledge base of LLMs while systematically mitigating the risks associated with their instability.
 
@@ -26,7 +25,7 @@ Based on this, the core functionalities of this toolkit include:
 
 -----
 
-#### **Framework Overview**
+## **Framework Overview**
 
 The following framework diagram (Figure 1) provides a more intuitive understanding of the entire workflow.
 
@@ -51,14 +50,14 @@ The entire process can be summarized into several high-level stages:
 
 -----
 
-#### **Conclusion and Outlook**
+## **Conclusion and Outlook**
 
 We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
 
 ![figure.](images/framework.PNG)
 
 
-
+# Dictionary
 
 ## Dataset Part
 #### `data_structure`
