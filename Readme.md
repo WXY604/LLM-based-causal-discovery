@@ -74,7 +74,7 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
     - `{Dataset_name}.mapping`：Mapping of dataset variable names.
 
-####  `dataset`
+#### `dataset`
 
 - `{data}`
 
@@ -120,7 +120,7 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
 
 
-####   `prior_knowledge`
+#### `prior_knowledge`
 
 -   `knowledge_matrix_convert.py`：Clean the knowledge provided by the large model and convert it into matrix form.
 
@@ -144,11 +144,11 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
         -   `{Dataset_name}.txt`：Edge prior matrix generated based on the ground truth causal graph.
 
-####   `src`
+#### `src`
 
 -   `{method_name}.py`：Main method for causal discovery.
 
-####   `causal_discovery`
+#### `causal_discovery`
 
 -   `evalution.py`：Evaluation functions used during the training process.
 
@@ -156,7 +156,7 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
 -   `main.py`：Main program.
 
-####   `out`
+#### `out`
 
 -   `output.csv`：Display of various parameters and metrics of the model training results.
  
