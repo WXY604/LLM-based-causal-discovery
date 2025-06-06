@@ -161,5 +161,61 @@ Of course, here is the translation of the Chinese parts into English, with the o
 -   `output.csv`：Display of various parameters and metrics of the model training results.
  
 # Usage
-      
-        -python tools/causal_discovery/main.py
+
+## **Installation Guide for LLM-based-causal-discovery**
+
+This guide provides step-by-step instructions for downloading the `LLM-based-causal-discovery` project and setting up its local environment.
+
+Follow these steps to get the project running.
+
+#### **Step 1: Clone the GitHub Repository**
+
+Open your terminal (Command Prompt or PowerShell on Windows, Terminal on macOS/Linux) and use the `git clone` command to download the project source code.
+
+```bash
+git clone https://github.com/WXY604/LLM-based-causal-discovery.git
+```
+
+This will create a folder named `LLM-based-causal-discovery` in your current directory. Navigate into this new folder:
+
+```bash
+cd LLM-based-causal-discovery
+```
+
+#### **Step 2: Create and Activate a Python Virtual Environment**
+
+Using a virtual environment is highly recommended to keep project dependencies isolated.
+
+* **Create the virtual environment** (we'll name it `venv`):
+
+    ```bash
+    python -m venv venv
+    ```
+
+* **Activate the virtual environment**:
+    * **On Windows**:
+        ```bash
+        .\venv\Scripts\activate
+        ```
+    * **On macOS and Linux**:
+        ```bash
+        source venv/bin/activate
+        ```
+
+    Once activated, you will see `(venv)` at the beginning of your terminal prompt.
+
+#### **Step 3: Install Project Dependencies**
+
+All required Python libraries are listed in the `Requirement.txt` file. You can install them all with a single `pip` command.
+
+Make sure your virtual environment is activated, then run:
+
+```bash
+pip install -r Requirement.txt
+```
+
+`pip` will automatically read the file and install all necessary packages. This process may take a few moments.
+
+## Run
+
+
