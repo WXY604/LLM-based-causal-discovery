@@ -1,5 +1,60 @@
 # Dictionary
-## Introduction
+
+## LLM-Augmented Causal Discovery Toolkit: A Technical Introduction
+
+#### **Background and Challenges**
+
+Inferring causal relationships from observational data is a core challenge in data science and related research fields. Traditional causal discovery methods rely heavily on prior knowledge from domain experts for guidance. However, acquiring such knowledge often involves significant costs in terms of both time and money, which largely limits the application scope of advanced causal discovery techniques.
+
+#### **Opportunities and Challenges of Large Language Models**
+
+The emergence of Large Language Models (LLMs) has provided new possibilities for acquiring prior knowledge. By querying LLMs about the relationships between variables, researchers can obtain judgments that approach the level of an expert. The advantage of this approach lies in significantly reducing the cost of knowledge acquisition. [cite\_start]Furthermore, in some scenarios, the knowledge provided by LLMs can be more objective than the judgments of non-professionals[cite: 17].
+
+However, this new paradigm is also accompanied by challenges. [cite\_start]LLMs have inherent instability; queries on the same topic may return inconsistent or even self-contradictory results[cite: 20, 74]. [cite\_start]Using this inaccurate or internally contradictory information directly as priors can not only fail to improve model performance but may also negatively impact the accuracy of the final analysis[cite: 22].
+
+#### **Our Approach and the Toolkit's Core Functionality**
+
+To address this challenge, we have developed this toolkit. It aims to fully leverage the powerful knowledge base of LLMs while systematically mitigating the risks associated with their instability.
+
+[cite\_start]Our core approach is inspired by the latest research findings: guiding an LLM to determine the concrete temporal order of events yields more reliable and stable outputs compared to directly asking it to judge abstract causal relationships[cite: 25].
+
+Based on this, the core functionalities of this toolkit include:
+
+1.  **Structured Knowledge Elicitation**: After the user defines the research scenario and variables, the toolkit automatically generates structured queries to guide the LLM, efficiently extracting high-confidence information regarding the temporal order of variables.
+2.  **Integration and Refinement of Model Outputs**: The toolkit includes a built-in analytical mechanism to process the initial information returned by the LLM. It systematically integrates these potentially inconsistent, localized judgments with the goal of refining a more globally consistent and reliable variable ordering.
+3.  **Compatibility with Downstream Algorithms**: The refined temporal priors produced by the toolkit can serve as high-quality constraints and be flexibly applied to various mainstream causal discovery algorithms, helping to construct more accurate and robust causal structures from real-world data.
+
+-----
+
+#### **Framework Overview**
+
+The following framework diagram (Figure 1) provides a more intuitive understanding of the entire workflow.
+
+The entire process can be summarized into several high-level stages:
+
+  * **Stage 1: Initial Knowledge Generation (Partial Order Generation)**
+
+      * [cite\_start]In this stage, we initiate structured queries to the LLM through scenario simulation and metadata input[cite: 42].
+      * [cite\_start]The objective is to obtain the model's preliminary, discrete judgments about the temporal sequence of variables[cite: 91].
+
+  * **Stage 2: Knowledge Integration and Refinement (Conflicting Decomposition & Optimal Total Order Discovery)**
+
+      * This is a critical step in the process. The toolkit systematically analyzes all preliminary judgments obtained from the LLM.
+      * [cite\_start]It integrates these scattered and potentially inconsistent local pieces of information with the aim of refining a more globally consistent and reliable variable ordering[cite: 92, 112].
+
+  * **Stage 3: Guiding Downstream Analysis (Order-based Causality)**
+
+      * Finally, this refined global ordering serves as a high-quality prior knowledge.
+      * [cite\_start]It can be input into any standard causal discovery algorithm chosen by the user, acting as a strong external guide to help the algorithm converge more accurately on the real data to infer the final causal graph[cite: 93].
+
+[cite\_start]In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning[cite: 133, 210].
+
+-----
+
+#### **Conclusion and Outlook**
+
+We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
+
 ![figure.](images/framework.PNG)
 
 
