@@ -30,7 +30,7 @@ Based on this, the core functionalities of this toolkit include:
 
 ![Figure1.](images/framework.PNG)
 
-The following framework diagram (Figure 1) provides a more intuitive understanding of the entire workflow.
+The above framework diagram provides a more intuitive understanding of the entire workflow.
 
 The entire process can be summarized into several high-level stages:
 
