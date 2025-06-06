@@ -27,6 +27,9 @@ Based on this, the core functionalities of this toolkit include:
 
 ## **Framework Overview**
 
+
+![Figure1.](images/framework.PNG)
+
 The following framework diagram (Figure 1) provides a more intuitive understanding of the entire workflow.
 
 The entire process can be summarized into several high-level stages:
@@ -48,7 +51,6 @@ The entire process can be summarized into several high-level stages:
 
 In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning.
 
-![figure.](images/framework.PNG)
 
 
 -----
