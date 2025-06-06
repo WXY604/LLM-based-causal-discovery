@@ -216,6 +216,83 @@ pip install -r Requirement.txt
 
 `pip` will automatically read the file and install all necessary packages. This process may take a few moments.
 
-## Run
+Of course. Here is the complete runbook translated into English, maintaining the original Markdown format.
+
+---
+
+## **Runbook**
+
+This guide provides detailed instructions for running the causal discovery process in different scenarios.
+
+### **Scenario 1: Running Causal Discovery Algorithm Only**
+
+If you already have all the pre-processed data and prior knowledge, you can run the main program directly to perform causal discovery.
+
+* **Execute the command:**
+    ```bash
+    python tools/causal_discovery/main.py
+    ```
+
+### **Scenario 2: Causal Discovery from a Raw Dataset**
+
+This workflow guides you through the entire process, from downloading a raw dataset to completing the causal discovery.
+
+1.  **Prepare Ground Truth and Mapping Files**
+    * Download the dataset's ground truth causal graph and variable mapping files from the relevant data source (e.g., project homepage, paper's repository).
+    * Place these files into the specified directory structure:
+        ```
+        data_structure/{Dataset_name}/
+        ```
+        > `{Dataset_name}` should be replaced with the name of your dataset.
+
+2.  **Prepare the Dataset Data File**
+    * Download the data file in `.csv` or `.txt` format.
+    * Place it into the specified directory structure:
+        ```
+        dataset/data/{Dataset_name}/
+        ```
+    * **Note:** By default, the project code reads filenames in a specific format (e.g., `Dataset_name_continues_...`). If your data filename does not follow this standard, you will need to modify the data loading logic in the `tools/causal_discovery/main.py` file accordingly.
+
+3.  **Generate the Prior Matrix**
+    * Run the following script to generate the edge prior matrix required by the algorithm, based on the ground truth.
+    * **Execute the command:**
+        ```bash
+        python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
+        ```
+
+4.  **Run the Main Program**
+    * Once everything is prepared, run the main program to start the causal discovery process.
+    * **Execute the command:**
+        ```bash
+        python tools/causal_discovery/main.py
+        ```
+
+### **Scenario 3: LLM-Assisted Causal Discovery**
+
+This workflow uses external knowledge from a Large Language Model (LLM) as a prior to assist in causal discovery.
+
+1.  **Prepare Ground Truth and Mapping Files**
+    * Follow the same instructions as in Step 1 of **Scenario 2**.
+
+2.  **Prepare the Dataset Data File**
+    * Follow the same instructions as in Step 2 of **Scenario 2**.
+
+3.  **Obtain the LLM Knowledge Matrix**
+    * Use the tools provided in `LLM_query` or your own methods to query an LLM about the causal relationships between variables.
+    * Clean and organize the results into a knowledge matrix. Ensure that its **format is consistent with the example file (`LLM_knowledge/{Dataset_name}/{Dataset_name}_{LLM_name}.txt`)**.
+
+4.  **Generate Prior Matrix from LLM Knowledge**
+    * First, you need to **modify** the `tools/causal_discovery/prior_knowledge/generation_edge_prior.py` script to switch its logic to generate the edge prior matrix based on **LLM/expert knowledge**.
+    * After modifying the script, run it:
+        ```bash
+        python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
+        ```
+
+5.  **Run the Main Program**
+    * Using the prior matrix that incorporates LLM knowledge, run the main program to perform causal discovery.
+    * **Execute the command:**
+        ```bash
+        python tools/causal_discovery/main.py
+        ```
 
 
