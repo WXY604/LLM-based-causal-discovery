@@ -1,4 +1,8 @@
 # Dictionary
+## Introduction
+![figure.](./images/framwork.pdf)
+
+
 
 
 ## Dataset Part
