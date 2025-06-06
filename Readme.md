@@ -1,6 +1,6 @@
 # Dictionary
 ## Introduction
-![figure.](images/framwork.pdf)
+![figure.](images/framework.pdf)
 
 
 
