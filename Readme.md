@@ -105,11 +105,11 @@ Of course, here is the translation of the Chinese parts into English, with the o
 #### `src`
 -   `{method_name}.py`: Main method for causal discovery
 #### `causal_discovery`
--   `evalution.py`: Evaluation functions used during the training process
--   `preparation.py`: Preparatory work such as parameter setting
--   `main.py`: Main program
+ -   `evalution.py`: Evaluation functions used during the training process
+ -   `preparation.py`: Preparatory work such as parameter setting
+ -   `main.py`: Main program
 #### `out`
--   `output.csv`: Display of various parameters and metrics of the model training results
+ -   `output.csv`: Display of various parameters and metrics of the model training results
  
 # Run
         -`python causal_discovery/main.py`
