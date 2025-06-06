@@ -23,7 +23,6 @@ Based on this, the core functionalities of this toolkit include:
   * **Integration and Refinement of Model Outputs**: The toolkit includes a built-in analytical mechanism to process the initial information returned by the LLM. It systematically integrates these potentially inconsistent, localized judgments with the goal of refining a more globally consistent and reliable variable ordering.
   * **Compatibility with Downstream Algorithms**: The refined temporal priors produced by the toolkit can serve as high-quality constraints and be flexibly applied to various mainstream causal discovery algorithms, helping to construct more accurate and robust causal structures from real-world data.
 
------
 
 ## **Framework Overview**
 
@@ -52,8 +51,6 @@ The entire process can be summarized into several high-level stages:
 In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning.
 
 
-
------
 
 ## **Conclusion and Outlook**
 
