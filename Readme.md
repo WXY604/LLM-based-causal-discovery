@@ -62,54 +62,103 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
 # Dictionary
 
+
+
 ## Dataset Part
+
 #### `data_structure`
+
 - `{Dataset_name}`
-    - `{Dataset_name}_graph.txt`: The ground truth causal graph of the dataset variables
-    - `{Dataset_name}.mapping`: Mapping of dataset variable names
+
+    - `{Dataset_name}_graph.txt`：数据集变量的真实因果图
+
+    - `{Dataset_name}.mapping`：数据集变量名对照
+
 ####  `dataset`
+
 - `{data}`
+
     - `{Dataset_name}`
-        - `{Dataset_name}_continues_{n}dsize_random{r}`: Synthetic dataset, n represents the ratio of dataset size to the number of variables, r represents random generation parameters
+
+        - `{Dataset_name}_continues_{n}dsize_random{r}`：合成数据集，n表示数据集规模与变量数目的比值，r表示随机生成参数
+
+
 
 ## LLM Part
 
+
+
 #### `prompt_design`
+
 -   `description`
-    -   `{Dataset_name}.json`: Explanation of variables in the dataset
--   `prompt_generation.py`: Generate the required prompt based on the content in the description
+
+    -   `{Dataset_name}.json`：数据集中变量的解释
+
+-   `prompt_generation.py`：根据description中的内容生成所需要的prompt
+
 -   `prompt`
+
     -   `{Dataset_name}`
-        -   `{Dataset_name}_{Variable_name}.txt`: The actual prompt used
+
+        -   `{Dataset_name}_{Variable_name}.txt`：实际使用的prompt
+
 #### `LLM_query`
--   `api.py`: Call the API to inquire about the causal relationships of dataset variables
+
+-   `api.py`：调用api对数据集变量进行因果关系询问
+
 -   `LLM_answer`
+
     -   `{Dataset_name}`
+
         -   `{LLM_name}`
-            -   `{Variable_name}.txt`: The causal relationships (causes and effects) of a specific variable in the dataset
+
+            -   `{Variable_name}.txt`：数据集中某个特定变量的前后因果关系
+
+
 
 ## Causal Discovery Part
 
-#### `prior_knowledge`
--   `knowledge_matrix_convert.py`: Clean the knowledge provided by the large model and convert it into matrix form
+
+
+####   `prior_knowledge`
+
+-   `knowledge_matrix_convert.py`：将大模型提供的知识清洗并转化为矩阵形式
+
 -   `LLM_knowledge`
+
     -   `{Dataset_name}`
-        -   `{Dataset_name}_{LLM_name}.txt`: Large model knowledge stored in matrix form
--   `generation_edge_prior.py`: Generate edge priors based on large model knowledge or the ground truth causal graph
+
+        -   `{Dataset_name}_{LLM_name}.txt`：矩阵形式存储的大模型知识
+
+-   `generation_edge_prior.py`：基于大模型知识或者真实因果图生成边先验
+
 -   `prior_based_on_LLM`
+
     -   `{Dataset_name}`
-        -   `{Dataset_name}_{LLM_name}.txt`: Edge prior matrix generated based on the large language model
+
+        -   `{Dataset_name}_{LLM_name}.txt`：基于大语言模型生成的边先验矩阵
+
 -   `prior_based_on_ground_truth`
+
     -   `{Dataset_name}`
-        -   `{Dataset_name}.txt`: Edge prior matrix generated based on the ground truth causal graph
-#### `src`
--   `{method_name}.py`: Main method for causal discovery
-#### `causal_discovery`
- -   `evalution.py`: Evaluation functions used during the training process
- -   `preparation.py`: Preparatory work such as parameter setting
- -   `main.py`: Main program
-#### `out`
- -   `output.csv`: Display of various parameters and metrics of the model training results
+
+        -   `{Dataset_name}.txt`：基于真实因果图生成的边先验矩阵
+
+####   `src`
+
+-   `{method_name}.py`：因果发现主方法
+
+####   `causal_discovery`
+
+-   `evalution.py`：训练过程中所使用的计算函数
+
+-   `preparation.py`：参数设置等前置准备
+
+-   `main.py`：主程序
+
+####   `out`
+
+-   `output.csv`：模型训练结果的各项参数与指标展示
  
 # Run
         -`python causal_discovery/main.py`
