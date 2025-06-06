@@ -48,13 +48,15 @@ The entire process can be summarized into several high-level stages:
 
 [cite\_start]In short, the core of this framework is to transform the potentially vague, contradictory, and localized knowledge provided by an LLM into a clear and reliable global variable ordering through a series of systematic steps, thereby providing effective support for data-driven causal learning[cite: 133, 210].
 
+![figure.](images/framework.PNG)
+
+
 -----
 
 ## **Conclusion and Outlook**
 
 We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
 
-![figure.](images/framework.PNG)
 
 
 # Dictionary
