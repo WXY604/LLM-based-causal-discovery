@@ -90,7 +90,7 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
 ## Causal Discovery Part
 
-####   `prior_knowledge`
+#### `prior_knowledge`
 -   `knowledge_matrix_convert.py`: Clean the knowledge provided by the large model and convert it into matrix form
 -   `LLM_knowledge`
     -   `{Dataset_name}`
@@ -102,13 +102,13 @@ Of course, here is the translation of the Chinese parts into English, with the o
 -   `prior_based_on_ground_truth`
     -   `{Dataset_name}`
         -   `{Dataset_name}.txt`: Edge prior matrix generated based on the ground truth causal graph
-####   `src`
+#### `src`
 -   `{method_name}.py`: Main method for causal discovery
-####   `causal_discovery`
+#### `causal_discovery`
 -   `evalution.py`: Evaluation functions used during the training process
 -   `preparation.py`: Preparatory work such as parameter setting
 -   `main.py`: Main program
-####   `out`
+#### `out`
 -   `output.csv`: Display of various parameters and metrics of the model training results
  
 # Run
