@@ -160,5 +160,6 @@ Of course, here is the translation of the Chinese parts into English, with the o
 
 -   `output.csv`：Display of various parameters and metrics of the model training results.
  
-# Run
-        -`python causal_discovery/main.py`
+# Usage
+      
+        -python tools/causal_discovery/main.py
