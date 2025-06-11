@@ -107,7 +107,10 @@ Finally, this constructed "Harmonized Prior" is integrated in a "plug-and-play" 
 
 This section will introduce another framework for leveraging Large Language Models (LLMs) for causal discovery. Unlike the aforementioned methods, this framework adopts a three-stage sequential prompting process, designed to extract and revise causal knowledge from an LLM, and then use this knowledge as prior information to guide traditional data-driven causal structure learning algorithms.
 
+<img src="images/Query.PNG" alt="Query_1" width="500" align="right" hspace="15" vspace="5">
+
 The core logic of the entire framework can be understood through the example prompts in the table on the right, which clearly demonstrates the three core stages: Variable Understanding, Causal Discovery, and Error Revision.
+
 
 **1. Stage One: Variable Understanding**
 
