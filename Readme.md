@@ -79,6 +79,7 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
     * It first uses "single-step reasoning" to quickly screen for causal pairs with the highest confidence.
     * Subsequently, it employs a "Decomposition and Verification" strategy to meticulously verify and reconfirm these selected relationships one by one, in order to filter out potential spurious associations.
     * The final output is a high-precision set of causal relationships, $\lambda_p$, which is used as a "Path Existence" constraint. That is, if $(A,B)$ is in this set, it is believed that a path from A to B exists in the true causal graph.
+
 ![Figure3.](images/Harmonized_2.PNG)
 
 * **Exploratory Expert - Aims for Recall**
@@ -86,6 +87,7 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
     * This module centers on each variable, analyzing one by one which other variables in the dataset could be its direct causes.
     * Through this "Decomposition and Exploration" approach, it generates a list of "possible causes" $C(x_i)$ for each variable.
     * All these possible causes are aggregated into a high-recall set of causal relationships, $\lambda_r$. This set is used to define an "Edge Absence" constraint, meaning if a causal relationship $(A,B)$ does not appear in this set, generating a direct edge from A to B in the final causal graph is forbidden.
+
 ![Figure4.](images/Harmonized_3.PNG)
 
 **2. Harmonized Prior Construction**
