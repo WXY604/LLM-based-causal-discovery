@@ -77,7 +77,6 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
 * **Conservative Expert - Aims for Precision**
 
 ![Figure3.](images/Harmonized_2.PNG)
-
     * As shown in the above figure, the goal of the Conservative Expert is to identify the most explicit and reliable causal relationships.
     * It first uses "single-step reasoning" to quickly screen for causal pairs with the highest confidence.
     * Subsequently, it employs a "Decomposition and Verification" strategy to meticulously verify and reconfirm these selected relationships one by one, in order to filter out potential spurious associations.
@@ -86,7 +85,6 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
 * **Exploratory Expert - Aims for Recall**
   
 ![Figure4.](images/Harmonized_3.PNG)
-
     * As shown in the above figure, the goal of the Exploratory Expert is to identify all potential causal links as comprehensively as possible.
     * This module centers on each variable, analyzing one by one which other variables in the dataset could be its direct causes.
     * Through this "Decomposition and Exploration" approach, it generates a list of "possible causes" $C(x_i)$ for each variable.
