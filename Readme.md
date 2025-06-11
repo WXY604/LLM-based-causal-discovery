@@ -56,7 +56,7 @@ In short, the core of this framework is to transform the potentially vague, cont
 
 We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
 
-![Figure2.](images/framework.PNG){: style="float:left; margin-right:15px;"}
+
 
 # Dictionary
 
