@@ -103,6 +103,43 @@ Finally, this constructed "Harmonized Prior" is integrated in a "plug-and-play" 
 
 
 
+## From Query Tools to Causal Architects
+
+This section will introduce another framework for leveraging Large Language Models (LLMs) for causal discovery. Unlike the aforementioned methods, this framework adopts a three-stage sequential prompting process, designed to extract and revise causal knowledge from an LLM, and then use this knowledge as prior information to guide traditional data-driven causal structure learning algorithms.
+
+The core logic of the entire framework can be understood through the example prompts in the table on the right, which clearly demonstrates the three core stages: Variable Understanding, Causal Discovery, and Error Revision.
+
+**1. Stage One: Variable Understanding**
+
+The objective of this stage is to first have the LLM accurately understand the real-world meaning of each variable in the dataset.
+
+* **Input:** The researcher provides the LLM with the symbol and possible values for each variable. This is typically the most basic information available in a standard dataset.
+* **Example Prompt ("Prompt Understand"):** As shown in Table 1, the prompt asks the LLM to act as an expert in a specific domain and explain the meaning of each variable based on its symbol and values.
+* **Output:** The LLM generates a detailed textual description for each variable, laying the foundation for a subsequent causal inference.
+
+**2. Stage Two: Causal Discovery**
+
+Based on a full understanding of the variables' meanings, the LLM is asked to identify the causal relationships among them.
+
+* **Example Prompt ("Prompt Causal Discovery"):** The prompt for this stage requires the LLM to analyze the causal effects between variables and output the results in the form of a directed graph network.
+* **Key Requirement:** The prompt here explicitly emphasizes that every edge in the graph must represent a **direct causal relationship** between the two variables.
+
+**3. Stage Three: Error Revision**
+
+To enhance the reliability of the LLM's output, the framework introduces a self-revision stage, prompting the LLM to check and correct its own previously generated conclusions.
+
+* **Example Prompt ("Prompt Revision"):** The causal statements generated in the second stage (e.g., $x_i \rightarrow x_j$) are used as input, asking the LLM in return whether these statements are correct and requesting it to provide reasons.
+* **Objective:** Through this self-checking mechanism, inaccurate causal statements are filtered out, ultimately yielding a higher-quality, more reliable set of causal relationships to guide the subsequent data analysis process.
+
+**4. Integration with Data-Driven Algorithms**
+
+A core insight of this framework is that although the LLM is prompted to output "direct" causal relationships, the knowledge inferred by the LLM is inherently closer to qualitative, indirect causal relationships. Therefore, the causal statements obtained through the three-stage process are not directly treated as the final causal graph.
+
+* **Ancestral Constraints:** The framework converts the LLM's revised causal statements (e.g., A causes B) into ancestral constraints. This means that in the final causal graph, there must exist a directed path from A to B, but not necessarily a direct edge.
+* **Hard and Soft Approaches:** These ancestral constraints are then integrated into score-based causal structure learning algorithms. Researchers can choose different integration strategies based on their level of confidence in the LLM's prior knowledge:
+    * **Hard Constraint Approach:** Strictly enforces that the final causal graph must satisfy all ancestral constraints provided by the LLM, narrowing the search space through methods like pruning.
+    * **Soft Constraint Approach:** Incorporates the LLM's prior knowledge as part of the scoring function. This method allows for discarding some prior constraints if there is a strong conflict between the data and the prior knowledge, thus possessing a degree of fault tolerance.
+
 
 # Dictionary
 
