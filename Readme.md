@@ -213,8 +213,6 @@ pip install -r Requirement.txt
 
 `pip` will automatically read the file and install all necessary packages. This process may take a few moments.
 
-Of course. Here is the complete runbook translated into English, maintaining the original Markdown format.
-
 ---
 
 ## **Runbook**
