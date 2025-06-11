@@ -75,6 +75,7 @@ The overall logical flow of the framework is shown in the above figure and prima
 To ensure the accuracy of the causal knowledge provided by the LLM, this framework does not have the LLM directly judge the complex relationships between all pairs of variables. Instead, it configures the LLM into two different expert roles focused on specific tasks: the Conservative Expert and the Exploratory Expert.
 
 * **Conservative Expert - Aims for Precision**
+* 
 ![Figure3.](images/Harmonized_2.PNG)
 
     * As shown in the above figure, the goal of the Conservative Expert is to identify the most explicit and reliable causal relationships.
@@ -83,6 +84,7 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
     * The final output is a high-precision set of causal relationships, $\lambda_p$, which is used as a "Path Existence" constraint. That is, if $(A,B)$ is in this set, it is believed that a path from A to B exists in the true causal graph.
 
 * **Exploratory Expert - Aims for Recall**
+* 
 ![Figure4.](images/Harmonized_3.PNG)
 
     * As shown in the above figure, the goal of the Exploratory Expert is to identify all potential causal links as comprehensively as possible.
