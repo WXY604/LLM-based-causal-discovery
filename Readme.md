@@ -65,7 +65,7 @@ This section introduces some methods for discovering and generating priors using
 
 The core idea of this framework is to use an LLM as a knowledge expert. Through specially designed Prompting Strategies, it guides the LLM to perform causal reasoning from two different yet complementary perspectives to generate a reliable "Harmonized Prior". This harmonized prior is then integrated into mainstream causal structure learning algorithms to enhance the accuracy and reliability of discovering causal relationships from data.
 
-<img src="images/Harmonized_1.PNG" alt="Harmonized_1" width="300" align="left" hspace="15" vspace="5">
+<img src="images/Harmonized_1.PNG" alt="Harmonized_1" width="320" align="left" hspace="15" vspace="5">
 
 The overall logical flow of the framework is shown in the left figure and primarily consists of three parts: Dual-Expert LLM Reasoning, Harmonized Prior Construction, and Plug-and-Play Structure Learning.
 
@@ -80,7 +80,7 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
     * Subsequently, it employs a "Decomposition and Verification" strategy to meticulously verify and reconfirm these selected relationships one by one, in order to filter out potential spurious associations.
     * The final output is a high-precision set of causal relationships, $\lambda_p$, which is used as a "Path Existence" constraint. That is, if $(A,B)$ is in this set, it is believed that a path from A to B exists in the true causal graph.
 
-<img src="images/Harmonized_2.PNG" alt="Harmonized_2" width="300" align="left" hspace="15" vspace="5">
+<img src="images/Harmonized_2.PNG" alt="Harmonized_2" width="320" align="left" hspace="15" vspace="5">
 
 * **Exploratory Expert - Aims for Recall**
     * As shown in the left figure, the goal of the Exploratory Expert is to identify all potential causal links as comprehensively as possible.
@@ -88,7 +88,7 @@ To ensure the accuracy of the causal knowledge provided by the LLM, this framewo
     * Through this "Decomposition and Exploration" approach, it generates a list of "possible causes" $C(x_i)$ for each variable.
     * All these possible causes are aggregated into a high-recall set of causal relationships, $\lambda_r$. This set is used to define an "Edge Absence" constraint, meaning if a causal relationship $(A,B)$ does not appear in this set, generating a direct edge from A to B in the final causal graph is forbidden.
 
-<img src="images/Harmonized_3.PNG" alt="Harmonized_3" width="300" align="left" hspace="15" vspace="5">
+<img src="images/Harmonized_3.PNG" alt="Harmonized_3" width="320" align="left" hspace="15" vspace="5">
 
 **2. Harmonized Prior Construction**
 The framework fuses the causal knowledge output by the two aforementioned experts to construct a unified "Harmonized Prior". This harmonized prior combines the advantages of both:
