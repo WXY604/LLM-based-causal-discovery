@@ -65,9 +65,11 @@ This section introduces some methods for discovering and generating priors using
 
 The core idea of this framework is to use an LLM as a knowledge expert. Through specially designed Prompting Strategies, it guides the LLM to perform causal reasoning from two different yet complementary perspectives to generate a reliable "Harmonized Prior". This harmonized prior is then integrated into mainstream causal structure learning algorithms to enhance the accuracy and reliability of discovering causal relationships from data.
 
-The overall logical flow of the framework is shown in the following figure and primarily consists of three parts: Dual-Expert LLM Reasoning, Harmonized Prior Construction, and Plug-and-Play Structure Learning.
-
 ![Figure2.](images/Harmonized_1.PNG)
+
+The overall logical flow of the framework is shown in the above figure and primarily consists of three parts: Dual-Expert LLM Reasoning, Harmonized Prior Construction, and Plug-and-Play Structure Learning.
+
+
 
 **1. Dual-Expert LLM Reasoning Module**
 To ensure the accuracy of the causal knowledge provided by the LLM, this framework does not have the LLM directly judge the complex relationships between all pairs of variables. Instead, it configures the LLM into two different expert roles focused on specific tasks: the Conservative Expert and the Exploratory Expert.
