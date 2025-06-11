@@ -56,7 +56,47 @@ In short, the core of this framework is to transform the potentially vague, cont
 
 We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
 
-![Figure2.](images/Harmonized_1.PNG)We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.We expect this toolkit to provide effective support for professionals engaged in causal science research and practice, helping users leverage the powerful knowledge source of Large Language Models more conveniently and reliably. We believe this approach offers a valuable technical direction for performing causal discovery in a stable and cost-effective manner and look forward to promoting the further development of this field in collaboration with both academia and industry.
+
+# Several LLM-based Methods Can Be Used
+
+This section introduces some methods for discovering and generating priors using large language models, for reference.
+
+## LLM-Driven Causal Discovery via Harmonized Prior
+
+The core idea of this framework is to use an LLM as a knowledge expert. Through specially designed Prompting Strategies, it guides the LLM to perform causal reasoning from two different yet complementary perspectives to generate a reliable "Harmonized Prior". This harmonized prior is then integrated into mainstream causal structure learning algorithms to enhance the accuracy and reliability of discovering causal relationships from data.
+
+The overall logical flow of the framework is shown in the following figure and primarily consists of three parts: Dual-Expert LLM Reasoning, Harmonized Prior Construction, and Plug-and-Play Structure Learning.
+
+![Figure2.](images/Harmonized_1.PNG)
+
+**1. Dual-Expert LLM Reasoning Module**
+To ensure the accuracy of the causal knowledge provided by the LLM, this framework does not have the LLM directly judge the complex relationships between all pairs of variables. Instead, it configures the LLM into two different expert roles focused on specific tasks: the Conservative Expert and the Exploratory Expert.
+
+* **Conservative Expert - Aims for Precision**
+    * As shown in Figure 2, the goal of the Conservative Expert is to identify the most explicit and reliable causal relationships.
+    * It first uses "single-step reasoning" to quickly screen for causal pairs with the highest confidence.
+    * Subsequently, it employs a "Decomposition and Verification" strategy to meticulously verify and reconfirm these selected relationships one by one, in order to filter out potential spurious associations.
+    * The final output is a high-precision set of causal relationships, $\lambda_p$, which is used as a "Path Existence" constraint. That is, if $(A,B)$ is in this set, it is believed that a path from A to B exists in the true causal graph.
+
+* **Exploratory Expert - Aims for Recall**
+    * As shown in Figure 3, the goal of the Exploratory Expert is to identify all potential causal links as comprehensively as possible.
+    * This module centers on each variable, analyzing one by one which other variables in the dataset could be its direct causes.
+    * Through this "Decomposition and Exploration" approach, it generates a list of "possible causes" $C(x_i)$ for each variable.
+    * All these possible causes are aggregated into a high-recall set of causal relationships, $\lambda_r$. This set is used to define an "Edge Absence" constraint, meaning if a causal relationship $(A,B)$ does not appear in this set, generating a direct edge from A to B in the final causal graph is forbidden.
+
+**2. Harmonized Prior Construction**
+The framework fuses the causal knowledge output by the two aforementioned experts to construct a unified "Harmonized Prior". This harmonized prior combines the advantages of both:
+
+* **Path Existence Constraint:** Utilizes the high-precision causal relationships $\lambda_p$ output by the Conservative Expert.
+* **Edge Absence Constraint:** Utilizes the high-recall causal relationships $\lambda_r$ output by the Exploratory Expert to define the scope of possible direct edges¹⁶.
+
+In this way, it not only ensures that strong causal signals are not lost but also effectively constrains the search space for structure learning by ruling out a large number of impossible causal connections, thereby improving overall accuracy.
+
+**3. Integration with Structure Learning Algorithms**
+Finally, this constructed "Harmonized Prior" is integrated in a "plug-and-play" manner into various mainstream causal structure learning algorithms, as shown in the top box of Figure 1. Whether they are Score-based, Constraint-based, or Gradient-based methods, all can leverage this harmonized prior to guide their search process, ultimately learning a more accurate and reliable causal graph from observational data.
+
+
+
 
 # Dictionary
 
