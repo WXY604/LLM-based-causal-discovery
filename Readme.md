@@ -259,6 +259,21 @@ This project can be used in two primary ways:
 
 The easiest way to use this system is to download the latest pre-built version for Linux. This does not require you to install Python or any dependencies manually, except for two system tools.
 
+Below is an overview of the application's user interface.
+
+<img src="images/system1.PNG" alt="system_1" width="500" align="right" hspace="15" vspace="5">
+
+The main modules of the interface are as follows:
+
+1.  **Data Upload:** Allows for uploading and reading local `.csv` files.
+2.  **Prior Knowledge Input:** A dedicated area to input expert knowledge, which will be used as priors for the algorithms.
+3.  **Algorithm Selection & Configuration:** Choose from 4 implemented algorithms (with three more currently in development). After selecting an algorithm, you can configure its parameters. *Please note that not all parameters may be fully functional in the current development phase.*
+4.  **LLM Integration:** Use a Large Language Model (LLM) to generate prior knowledge as an alternative to human experts (effective for specific methods only). This section also provides a direct chat interface for asking the LLM questions.
+
+-----
+
+Now, follow these steps to install and run the application:
+
 **1. Install Prerequisites**
 
 This application requires `graphviz` (for graph rendering) and `unrar` (for extracting the downloaded file). Please install them first:
@@ -271,8 +286,6 @@ sudo apt-get update && sudo apt-get install graphviz unrar
 **2. Download the Application**
 
 Go to the project's **[GitHub Releases Page](https://www.google.com/search?q=https://github.com/WXY604/LLM-based-causal-discovery/releases)** to find the latest version.
-
-[](https://www.google.com/search?q=https://github.com/WXY604/LLM-based-causal-discovery/releases)
 
 Download the `.rar` archive (e.g., `Causal.Discovery.System.part1.rar`) from the "Assets" section.
 
