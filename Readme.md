@@ -243,138 +243,149 @@ A core insight of this framework is that although the LLM is prompted to output 
 #### `out`
 
 -   `output.csv`：Display of various parameters and metrics of the model training results.
- 
-# Usage
 
-## **Installation Guide for LLM-based-causal-discovery**
+-----
+
+# 🚀 Getting Started
+
+This project can be used in two primary ways:
+
+1.  **For End-Users:** By downloading and running the pre-built, standalone application (recommended).
+2.  **For Developers:** By cloning the source code and setting up the local development environment.
+
+-----
+
+## For End-Users (Recommended Method)
+
+The easiest way to use this system is to download the latest pre-built version for Linux. This does not require you to install Python or any dependencies manually, except for two system tools.
+
+**1. Install Prerequisites**
+
+This application requires `graphviz` (for graph rendering) and `unrar` (for extracting the downloaded file). Please install them first:
+
+```bash
+# For Debian/Ubuntu-based systems
+sudo apt-get update && sudo apt-get install graphviz unrar
+```
+
+**2. Download the Application**
+
+Go to the project's **[GitHub Releases Page](https://www.google.com/search?q=https://github.com/WXY604/LLM-based-causal-discovery/releases)** to find the latest version.
+
+[](https://www.google.com/search?q=https://github.com/WXY604/LLM-based-causal-discovery/releases)
+
+Download the `.rar` archive (e.g., `Causal.Discovery.System.part1.rar`) from the "Assets" section.
+
+**3. Extract and Run**
+
+Open a terminal and run the following commands:
+
+```bash
+# 1. Extract the RAR archive. Quotes are important due to spaces in the filename.
+unrar x "Causal Discovery System.part1.rar"
+
+# 2. Navigate into the new directory
+cd CD
+
+# 3. Grant execute permissions to the main program
+chmod +x CD
+
+# 4. Run the application
+./CD
+```
+
+The program will start in the background and automatically open the user interface in your default web browser. To stop the application, press `Ctrl + C` in the terminal.
+
+-----
+
+## For Developers (From Source)
+
+If you wish to run the scripts directly, modify the code, or contribute to the project, follow these instructions to set up a local development environment.
+
+#### Installation Guide
 
 This guide provides step-by-step instructions for downloading the `LLM-based-causal-discovery` project and setting up its local environment.
 
-Follow these steps to get the project running.
+**Step 1: Clone the GitHub Repository**
 
-#### **Step 1: Clone the GitHub Repository**
-
-Open your terminal (Command Prompt or PowerShell on Windows, Terminal on macOS/Linux) and use the `git clone` command to download the project source code.
+Open your terminal and use the `git clone` command to download the project source code.
 
 ```bash
 git clone https://github.com/WXY604/LLM-based-causal-discovery.git
 ```
 
-This will create a folder named `LLM-based-causal-discovery` in your current directory. Navigate into this new folder:
+This will create a folder named `LLM-based-causal-discovery`. Navigate into this new folder:
 
 ```bash
 cd LLM-based-causal-discovery
 ```
 
-#### **Step 2: Create and Activate a Python Virtual Environment**
+**Step 2: Create and Activate a Python Virtual Environment**
 
 Using a virtual environment is highly recommended to keep project dependencies isolated.
 
-* **Create the virtual environment** (we'll name it `venv`):
-
-    ```bash
-    python -m venv venv
-    ```
-
-* **Activate the virtual environment**:
-    * **On Windows**:
-        ```bash
-        .\venv\Scripts\activate
-        ```
-    * **On macOS and Linux**:
-        ```bash
-        source venv/bin/activate
-        ```
-
-    Once activated, you will see `(venv)` at the beginning of your terminal prompt.
-
-#### **Step 3: Install Project Dependencies**
-
-All required Python libraries are listed in the `Requirement.txt` file. You can install them all with a single `pip` command.
-
-Make sure your virtual environment is activated, then run:
-
 ```bash
-pip install -r Requirement.txt
+# Create the virtual environment (we'll name it venv):
+python -m venv venv
+
+# Activate the virtual environment:
+# On Windows:
+.\venv\Scripts\activate
+# On macOS and Linux:
+source venv/bin/activate
 ```
 
-`pip` will automatically read the file and install all necessary packages. This process may take a few moments.
+Once activated, you will see `(venv)` at the beginning of your terminal prompt.
 
----
+**Step 3: Install Project Dependencies**
 
-## **Runbook**
+All required Python libraries are listed in the `requirements.txt` file. Make sure your virtual environment is activated, then run:
 
-This guide provides detailed instructions for running the causal discovery process in different scenarios.
+```bash
+pip install -r requirements.txt
+```
 
-### **Scenario 1: Running Causal Discovery Algorithm Only**
+This process may take a few moments.
 
-If you already have all the pre-processed data and prior knowledge, you can run the main program directly to perform causal discovery.
+#### Runbook
 
-* **Execute the command:**
+This guide provides detailed instructions for running the causal discovery process in different scenarios from the source code.
+
+**Scenario 1: Running Causal Discovery Algorithm Only**
+
+If you already have all the pre-processed data and prior knowledge, you can run the main program directly.
+
+```bash
+python tools/causal_discovery/main.py
+```
+
+**Scenario 2: Causal Discovery from a Raw Dataset**
+
+This workflow guides you through the entire process, from downloading a raw dataset to completing the discovery.
+
+1.  **Prepare Ground Truth and Mapping Files:** Place these files into `data_structure/{Dataset_name}/`.
+2.  **Prepare the Dataset Data File:** Place your `.csv` or `.txt` file into `dataset/data/{Dataset_name}/`.
+3.  **Generate the Prior Matrix:** Run the script to generate the edge prior matrix from the ground truth.
+    ```bash
+    python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
+    ```
+4.  **Run the Main Program:**
     ```bash
     python tools/causal_discovery/main.py
     ```
 
-### **Scenario 2: Causal Discovery from a Raw Dataset**
+**Scenario 3: LLM-Assisted Causal Discovery**
 
-This workflow guides you through the entire process, from downloading a raw dataset to completing the causal discovery.
+This workflow uses external knowledge from a Large Language Model (LLM) as a prior.
 
-1.  **Prepare Ground Truth and Mapping Files**
-    * Download the dataset's ground truth causal graph and variable mapping files from the relevant data source (e.g., project homepage, paper's repository).
-    * Place these files into the specified directory structure:
-        ```
-        data_structure/{Dataset_name}/
-        ```
-        > `{Dataset_name}` should be replaced with the name of your dataset.
-
-2.  **Prepare the Dataset Data File**
-    * Download the data file in `.csv` or `.txt` format.
-    * Place it into the specified directory structure:
-        ```
-        dataset/data/{Dataset_name}/
-        ```
-    * **Note:** By default, the project code reads filenames in a specific format (e.g., `Dataset_name_continues_...`). If your data filename does not follow this standard, you will need to modify the data loading logic in the `tools/causal_discovery/main.py` file accordingly.
-
-3.  **Generate the Prior Matrix**
-    * Run the following script to generate the edge prior matrix required by the algorithm, based on the ground truth.
-    * **Execute the command:**
-        ```bash
-        python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
-        ```
-
-4.  **Run the Main Program**
-    * Once everything is prepared, run the main program to start the causal discovery process.
-    * **Execute the command:**
-        ```bash
-        python tools/causal_discovery/main.py
-        ```
-
-### **Scenario 3: LLM-Assisted Causal Discovery**
-
-This workflow uses external knowledge from a Large Language Model (LLM) as a prior to assist in causal discovery.
-
-1.  **Prepare Ground Truth and Mapping Files**
-    * Follow the same instructions as in Step 1 of **Scenario 2**.
-
-2.  **Prepare the Dataset Data File**
-    * Follow the same instructions as in Step 2 of **Scenario 2**.
-
-3.  **Obtain the LLM Knowledge Matrix**
-    * Use the tools provided in `LLM_query` or your own methods to query an LLM about the causal relationships between variables.
-    * Clean and organize the results into a knowledge matrix. Ensure that its **format is consistent with the example file (`LLM_knowledge/{Dataset_name}/{Dataset_name}_{LLM_name}.txt`)**.
-
-4.  **Generate Prior Matrix from LLM Knowledge**
-    * First, you need to **modify** the `tools/causal_discovery/prior_knowledge/generation_edge_prior.py` script to switch its logic to generate the edge prior matrix based on **LLM/expert knowledge**.
-    * After modifying the script, run it:
-        ```bash
-        python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
-        ```
-
-5.  **Run the Main Program**
-    * Using the prior matrix that incorporates LLM knowledge, run the main program to perform causal discovery.
-    * **Execute the command:**
-        ```bash
-        python tools/causal_discovery/main.py
-        ```
-
+1.  **Prepare Data:** Follow steps 1 & 2 from Scenario 2.
+2.  **Obtain the LLM Knowledge Matrix:** Use the tools in `LLM_query` (or your own methods) and format the results as specified in `LLM_knowledge/{Dataset_name}/{Dataset_name}_{LLM_name}.txt`.
+3.  **Generate Prior Matrix from LLM Knowledge:** First, **modify** the `tools/causal_discovery/prior_knowledge/generation_edge_prior.py` script to switch its logic to generate the prior based on LLM knowledge. After modifying, run it:
+    ```bash
+    python tools/causal_discovery/prior_knowledge/generation_edge_prior.py
+    ```
+4.  **Run the Main Program:**
+    ```bash
+    python tools/causal_discovery/main.py
+    ```
 
